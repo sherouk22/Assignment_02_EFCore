@@ -56,6 +56,7 @@ namespace Assignment_02_EFCore
 
             #endregion
 
+            #region Delete
 
             //var student = (from e in Context.Students
             //               where e.ID == 1
@@ -75,6 +76,7 @@ namespace Assignment_02_EFCore
 
             //}
 
+            #endregion
 
 
             #endregion
