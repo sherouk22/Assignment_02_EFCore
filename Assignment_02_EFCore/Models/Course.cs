@@ -19,5 +19,7 @@ namespace Assignment_02_EFCore.Models
         public string Description { get; set; }
 
         public int Top_ID { get; set; }
+
+        public ICollection<Stud_Course> Stud_Course { get; set; }
     }
 }

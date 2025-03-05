@@ -4,6 +4,7 @@ using Assignment_02_EFCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Assignment_02_EFCore.Migrations
 {
     [DbContext(typeof(ItiDbContext))]
-    partial class ItiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250305010032_ManyToManyRelationship")]
+    partial class ManyToManyRelationship
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,7 +50,7 @@ namespace Assignment_02_EFCore.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Course", (string)null);
+                    b.ToTable("Course");
                 });
 
             modelBuilder.Entity("Assignment_02_EFCore.Models.Course_Inst", b =>
@@ -64,7 +67,7 @@ namespace Assignment_02_EFCore.Migrations
 
                     b.HasKey("inst_ID", "Course_ID");
 
-                    b.ToTable("Course_Inst", (string)null);
+                    b.ToTable("Course_Inst");
                 });
 
             modelBuilder.Entity("Assignment_02_EFCore.Models.Department", b =>
@@ -88,7 +91,7 @@ namespace Assignment_02_EFCore.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Department", (string)null);
+                    b.ToTable("Department");
                 });
 
             modelBuilder.Entity("Assignment_02_EFCore.Models.Instructor", b =>
@@ -121,7 +124,7 @@ namespace Assignment_02_EFCore.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Instructor", (string)null);
+                    b.ToTable("Instructor");
                 });
 
             modelBuilder.Entity("Assignment_02_EFCore.Models.Stud_Course", b =>
@@ -147,7 +150,7 @@ namespace Assignment_02_EFCore.Migrations
 
                     b.HasIndex("StudentID");
 
-                    b.ToTable("Stud_Course", (string)null);
+                    b.ToTable("Stud_Course");
                 });
 
             modelBuilder.Entity("Assignment_02_EFCore.Models.Student", b =>
@@ -178,7 +181,7 @@ namespace Assignment_02_EFCore.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Students", (string)null);
+                    b.ToTable("Students");
                 });
 
             modelBuilder.Entity("Assignment_02_EFCore.Models.Topic", b =>
@@ -192,7 +195,7 @@ namespace Assignment_02_EFCore.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Topic", (string)null);
+                    b.ToTable("Topic");
                 });
 
             modelBuilder.Entity("Assignment_02_EFCore.Models.Stud_Course", b =>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace Assignment_02_EFCore.Models
         public DateTime HiringDate { get; set; }
 
         public int Ins_ID { get; set; }
+
+        [InverseProperty("Department")]
+        public ICollection<Student> Students { get; set; }
+
+
 
     }
 }

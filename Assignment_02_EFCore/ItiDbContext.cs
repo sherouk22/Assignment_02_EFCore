@@ -42,8 +42,9 @@ namespace Assignment_02_EFCore
 
         public DbSet<Instructor> Instructor { get; set; }
 
+        public DbSet<Stud_Course> Stud_Course { get; set; }
 
-
+        public DbSet<Course_Inst> Course_Inst { get; set; }
 
 
 
